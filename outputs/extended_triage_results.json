@@ -1,0 +1,155 @@
+[
+  {
+    "source": "Email",
+    "subject": null,
+    "category": "Bug Report",
+    "priority": "Medium",
+    "confidence": 0.82,
+    "core_issue": "The customer reports the following issue: Hi, I tried logging in this morning and keep getting a 403 error. My account is arcvault.io/user/jsmith. This started af...",
+    "identifiers": [
+      "arcvault.io/user/jsmith",
+      "403"
+    ],
+    "urgency": "medium",
+    "route_to": "Engineering",
+    "escalation_flag": false,
+    "summary": "The ticket describes a product issue related to Hi, I tried logging in this morning and keep getting a 403 error. It should be reviewed with medium urgency.",
+    "processed_at": "2026-03-13T11:33:12.709504Z"
+  },
+  {
+    "source": "Web Form",
+    "subject": null,
+    "category": "Feature Request",
+    "priority": "Low",
+    "confidence": 0.98,
+    "core_issue": "The customer is requesting a product enhancement related to we'd love to see a bulk export feature for our audit logs.",
+    "identifiers": [],
+    "urgency": "low",
+    "route_to": "Product",
+    "escalation_flag": false,
+    "summary": "This is a product improvement request rather than a defect or outage. It should be routed to the product queue for roadmap consideration.",
+    "processed_at": "2026-03-13T11:33:12.717546Z"
+  },
+  {
+    "source": "Support Portal",
+    "subject": null,
+    "category": "Billing Issue",
+    "priority": "High",
+    "confidence": 0.98,
+    "core_issue": "The customer reports a billing problem involving invoice #8821 and a stated amount of $1240.",
+    "identifiers": [
+      "invoice #8821"
+    ],
+    "urgency": "high",
+    "route_to": "Escalation Queue",
+    "escalation_flag": true,
+    "summary": "This is a billing-related support request about invoice #8821 for $1240. It should be reviewed by the billing team with high urgency.",
+    "processed_at": "2026-03-13T11:33:12.735608Z"
+  },
+  {
+    "source": "Email",
+    "subject": null,
+    "category": "Technical Question",
+    "priority": "Low",
+    "confidence": 0.95,
+    "core_issue": "The customer is asking for support guidance about i'm not sure if this is the right place to ask, but is there a way to set up sso.",
+    "identifiers": [],
+    "urgency": "low",
+    "route_to": "Support",
+    "escalation_flag": false,
+    "summary": "This is a how-to or support guidance request. It should be routed to the support queue for a standard response.",
+    "processed_at": "2026-03-13T11:33:12.756662Z"
+  },
+  {
+    "source": "Web Form",
+    "subject": null,
+    "category": "Incident/Outage",
+    "priority": "High",
+    "confidence": 0.91,
+    "core_issue": "ArcVault appears to have a service-impacting access issue related to your dashboard stopped loading for us around 2pm est.",
+    "identifiers": [],
+    "urgency": "critical",
+    "route_to": "Escalation Queue",
+    "escalation_flag": true,
+    "summary": "The message indicates a broad access or availability problem affecting normal platform usage. This should be treated as a critical operational issue.",
+    "processed_at": "2026-03-13T11:33:12.786563Z"
+  },
+  {
+    "source": "Email",
+    "subject": "Refund request",
+    "category": "Billing Issue",
+    "priority": "Medium",
+    "confidence": 0.98,
+    "core_issue": "The customer reports a billing problem involving invoice #9929 and a stated amount of $85.",
+    "identifiers": [
+      "invoice #9929"
+    ],
+    "urgency": "medium",
+    "route_to": "Billing",
+    "escalation_flag": false,
+    "summary": "This is a billing-related support request about invoice #9929 for $85. It should be reviewed by the billing team with medium urgency.",
+    "processed_at": "2026-03-13T11:33:12.820191Z"
+  },
+  {
+    "source": "Support Portal",
+    "subject": "CSV upload failing",
+    "category": "Bug Report",
+    "priority": "Medium",
+    "confidence": 0.82,
+    "core_issue": "The customer reports the following issue: Error code ERR-104 appears when importing users for account ID AC-4438. The failure started today",
+    "identifiers": [
+      "account id ac-4438",
+      "error code err-104",
+      "err-104"
+    ],
+    "urgency": "medium",
+    "route_to": "Engineering",
+    "escalation_flag": false,
+    "summary": "The ticket describes a product issue related to CSV upload failing. It should be reviewed with medium urgency.",
+    "processed_at": "2026-03-13T11:33:12.855640Z"
+  },
+  {
+    "source": "Web Form",
+    "subject": null,
+    "category": "Technical Question",
+    "priority": "Low",
+    "confidence": 0.95,
+    "core_issue": "The customer is asking for support guidance about is there a way to export all invoices for q1 into a csv file.",
+    "identifiers": [],
+    "urgency": "low",
+    "route_to": "Support",
+    "escalation_flag": false,
+    "summary": "This is a how-to or support guidance request. It should be routed to the support queue for a standard response.",
+    "processed_at": "2026-03-13T11:33:12.881791Z"
+  },
+  {
+    "source": "Email",
+    "subject": "Possible security concern",
+    "category": "Incident/Outage",
+    "priority": "High",
+    "confidence": 0.96,
+    "core_issue": "ArcVault appears to have a service-impacting access issue related to possible security concern.",
+    "identifiers": [
+      "arcvault.io/user/admin"
+    ],
+    "urgency": "critical",
+    "route_to": "Escalation Queue",
+    "escalation_flag": true,
+    "summary": "The message indicates a potential security-related platform incident. This should be treated as a critical issue and reviewed quickly.",
+    "processed_at": "2026-03-13T11:33:12.912960Z"
+  },
+  {
+    "source": "Web Form",
+    "subject": "Dashboard slow",
+    "category": "Bug Report",
+    "priority": "Medium",
+    "confidence": 0.82,
+    "core_issue": "The customer reports the following issue: The analytics dashboard takes 20-30 seconds to load for one admin user, but the rest of the app works",
+    "identifiers": [],
+    "urgency": "medium",
+    "route_to": "Engineering",
+    "escalation_flag": false,
+    "summary": "The ticket describes a product issue related to Dashboard slow. It should be reviewed with medium urgency.",
+    "processed_at": "2026-03-13T11:33:12.943650Z"
+  }
+]

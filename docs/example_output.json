@@ -1,0 +1,77 @@
+[
+  {
+    "source": "Email",
+    "subject": null,
+    "category": "Bug Report",
+    "priority": "Medium",
+    "confidence": 0.82,
+    "core_issue": "The customer reports the following issue: Hi, I tried logging in this morning and keep getting a 403 error. My account is arcvault.io/user/jsmith. This started af...",
+    "identifiers": [
+      "arcvault.io/user/jsmith",
+      "403"
+    ],
+    "urgency": "medium",
+    "route_to": "Engineering",
+    "escalation_flag": false,
+    "summary": "The ticket describes a product issue related to Hi, I tried logging in this morning and keep getting a 403 error. It should be reviewed with medium urgency.",
+    "processed_at": "2026-03-13T11:43:58.425164Z"
+  },
+  {
+    "source": "Web Form",
+    "subject": null,
+    "category": "Feature Request",
+    "priority": "Low",
+    "confidence": 0.98,
+    "core_issue": "The customer is requesting a product enhancement related to we'd love to see a bulk export feature for our audit logs.",
+    "identifiers": [],
+    "urgency": "low",
+    "route_to": "Product",
+    "escalation_flag": false,
+    "summary": "This is a product improvement request rather than a defect or outage. It should be routed to the product queue for roadmap consideration.",
+    "processed_at": "2026-03-13T11:43:58.433172Z"
+  },
+  {
+    "source": "Support Portal",
+    "subject": null,
+    "category": "Billing Issue",
+    "priority": "High",
+    "confidence": 0.98,
+    "core_issue": "The customer reports a billing problem involving invoice #8821 and a stated amount of $1240.",
+    "identifiers": [
+      "invoice #8821"
+    ],
+    "urgency": "high",
+    "route_to": "Escalation Queue",
+    "escalation_flag": true,
+    "summary": "This is a billing-related support request about invoice #8821 for $1240. It should be reviewed by the billing team with high urgency.",
+    "processed_at": "2026-03-13T11:43:58.448269Z"
+  },
+  {
+    "source": "Email",
+    "subject": null,
+    "category": "Technical Question",
+    "priority": "Low",
+    "confidence": 0.95,
+    "core_issue": "The customer is asking for support guidance about i'm not sure if this is the right place to ask, but is there a way to set up sso.",
+    "identifiers": [],
+    "urgency": "low",
+    "route_to": "Support",
+    "escalation_flag": false,
+    "summary": "This is a how-to or support guidance request. It should be routed to the support queue for a standard response.",
+    "processed_at": "2026-03-13T11:43:58.465892Z"
+  },
+  {
+    "source": "Web Form",
+    "subject": null,
+    "category": "Incident/Outage",
+    "priority": "High",
+    "confidence": 0.91,
+    "core_issue": "ArcVault appears to have a service-impacting access issue related to your dashboard stopped loading for us around 2pm est.",
+    "identifiers": [],
+    "urgency": "critical",
+    "route_to": "Escalation Queue",
+    "escalation_flag": true,
+    "summary": "The message indicates a broad access or availability problem affecting normal platform usage. This should be treated as a critical operational issue.",
+    "processed_at": "2026-03-13T11:43:58.482445Z"
+  }
+]
