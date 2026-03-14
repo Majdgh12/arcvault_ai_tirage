@@ -1,17 +1,24 @@
 from __future__ import annotations
 
 from datetime import datetime, timezone
+from pathlib import Path
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 
-from app.config import settings
+from app.config import BASE_DIR, settings
 from app.models import TriageRequest, TriageResponse
 from services.classifier import classify_message
 from services.escalation import should_escalate
 from services.extractor import extract_message_details
 from services.router import determine_route
-from services.storage import append_triage_result
+from services.storage import append_triage_result, load_triage_results
+
+
+STATIC_DIR = BASE_DIR / "app" / "static"
+MONITOR_INDEX_PATH = STATIC_DIR / "monitor.html"
 
 
 app = FastAPI(
@@ -28,10 +35,17 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
+
 
 @app.get("/")
 def read_root() -> dict[str, str]:
     return {"service": "arcvault-ai-triage", "status": "running"}
+
+
+@app.get("/monitor", include_in_schema=False)
+def triage_monitor() -> FileResponse:
+    return FileResponse(MONITOR_INDEX_PATH)
 
 
 @app.get("/health")
@@ -89,3 +103,10 @@ def triage_message(payload: TriageRequest) -> TriageResponse:
             status_code=502,
             detail=f"Triage processing failed: {exc}",
         ) from exc
+
+
+@app.get("/results", response_model=list[TriageResponse])
+def get_results(limit: int = Query(default=25, ge=1, le=250)) -> list[TriageResponse]:
+    records = load_triage_results(limit=limit)
+    records.reverse()
+    return [TriageResponse.model_validate(record) for record in records]

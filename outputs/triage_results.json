@@ -1,20 +1,50 @@
 [
   {
+    "source": "Support Portal",
+    "subject": null,
+    "category": "Billing Issue",
+    "priority": "Medium",
+    "confidence": 1.0,
+    "core_issue": "Invoice #8821 shows a charge of $1,240, which is higher than the contract rate of $980 per month.",
+    "identifiers": [
+      "#8821"
+    ],
+    "urgency": "high",
+    "route_to": "Escalation Queue",
+    "escalation_flag": true,
+    "summary": "A customer is disputing the charge on Invoice #8821. The invoice shows a charge of $1,240, but their contract rate is $980/month. An investigation is requested to resolve this billing discrepancy.",
+    "processed_at": "2026-03-14T11:50:25.551888Z"
+  },
+  {
     "source": "Email",
     "subject": null,
     "category": "Bug Report",
-    "priority": "Medium",
-    "confidence": 0.82,
-    "core_issue": "The customer reports the following issue: Hi, I tried logging in this morning and keep getting a 403 error. My account is arcvault.io/user/jsmith. This started af...",
+    "priority": "High",
+    "confidence": 0.95,
+    "core_issue": "The user is encountering a 403 error when attempting to log in to their account.",
     "identifiers": [
-      "arcvault.io/user/jsmith",
-      "403"
+      "403 error",
+      "arcvault.io/user/jsmith"
     ],
-    "urgency": "medium",
+    "urgency": "high",
     "route_to": "Engineering",
     "escalation_flag": false,
-    "summary": "The ticket describes a product issue related to Hi, I tried logging in this morning and keep getting a 403 error. It should be reviewed with medium urgency.",
-    "processed_at": "2026-03-13T11:43:58.425164Z"
+    "summary": "A user is unable to log into their account at arcvault.io/user/jsmith. They are consistently receiving a 403 error message. This issue reportedly began after a system update last Tuesday.",
+    "processed_at": "2026-03-14T12:16:26.443816Z"
+  },
+  {
+    "source": "Web Form",
+    "subject": null,
+    "category": "Incident/Outage",
+    "priority": "High",
+    "confidence": 1.0,
+    "core_issue": "The ArcVault dashboard stopped loading for multiple users around 2 PM EST.",
+    "identifiers": [],
+    "urgency": "critical",
+    "route_to": "Escalation Queue",
+    "escalation_flag": true,
+    "summary": "The user's dashboard ceased loading around 2 PM EST. This issue has been verified by the user's team and appears to be on ArcVault's end. Multiple users are currently affected by this outage.",
+    "processed_at": "2026-03-14T12:26:29.316542Z"
   },
   {
     "source": "Web Form",
@@ -28,23 +58,7 @@
     "route_to": "Product",
     "escalation_flag": false,
     "summary": "This is a product improvement request rather than a defect or outage. It should be routed to the product queue for roadmap consideration.",
-    "processed_at": "2026-03-13T11:43:58.433172Z"
-  },
-  {
-    "source": "Support Portal",
-    "subject": null,
-    "category": "Billing Issue",
-    "priority": "High",
-    "confidence": 0.98,
-    "core_issue": "The customer reports a billing problem involving invoice #8821 and a stated amount of $1240.",
-    "identifiers": [
-      "invoice #8821"
-    ],
-    "urgency": "high",
-    "route_to": "Escalation Queue",
-    "escalation_flag": true,
-    "summary": "This is a billing-related support request about invoice #8821 for $1240. It should be reviewed by the billing team with high urgency.",
-    "processed_at": "2026-03-13T11:43:58.448269Z"
+    "processed_at": "2026-03-14T13:07:51.875671Z"
   },
   {
     "source": "Email",
@@ -58,285 +72,6 @@
     "route_to": "Support",
     "escalation_flag": false,
     "summary": "This is a how-to or support guidance request. It should be routed to the support queue for a standard response.",
-    "processed_at": "2026-03-13T11:43:58.465892Z"
-  },
-  {
-    "source": "Web Form",
-    "subject": null,
-    "category": "Incident/Outage",
-    "priority": "High",
-    "confidence": 0.91,
-    "core_issue": "ArcVault appears to have a service-impacting access issue related to your dashboard stopped loading for us around 2pm est.",
-    "identifiers": [],
-    "urgency": "critical",
-    "route_to": "Escalation Queue",
-    "escalation_flag": true,
-    "summary": "The message indicates a broad access or availability problem affecting normal platform usage. This should be treated as a critical operational issue.",
-    "processed_at": "2026-03-13T11:43:58.482445Z"
-  },
-  {
-    "source": "Support Portal",
-    "subject": null,
-    "category": "Billing Issue",
-    "priority": "Medium",
-    "confidence": 0.99,
-    "core_issue": "Invoice #8821 contains a charge that is higher than the agreed contract rate.",
-    "identifiers": [
-      "8821"
-    ],
-    "urgency": "medium",
-    "route_to": "Escalation Queue",
-    "escalation_flag": true,
-    "summary": "Invoice #8821 lists a charge of $1,240. Our contract rate, however, is $980 per month. Please investigate this discrepancy and correct the billing.",
-    "processed_at": "2026-03-13T12:24:54.587231Z"
-  },
-  {
-    "source": "Support Portal",
-    "subject": null,
-    "category": "Billing Issue",
-    "priority": "High",
-    "confidence": 1.0,
-    "core_issue": "The user is questioning a billing discrepancy on invoice #8821, where the charged amount of $1,240 is higher than their contract rate of $980 per month.",
-    "identifiers": [
-      "8821"
-    ],
-    "urgency": "medium",
-    "route_to": "Escalation Queue",
-    "escalation_flag": true,
-    "summary": "The user has identified a discrepancy on Invoice #8821, stating a charge of $1,240. They assert that their agreed contract rate is $980 per month. They are requesting an investigation into this potential overcharge.",
-    "processed_at": "2026-03-13T17:17:08.391880Z"
-  },
-  {
-    "source": "Support Portal",
-    "subject": null,
-    "category": "Billing Issue",
-    "priority": "Medium",
-    "confidence": 0.95,
-    "core_issue": "Invoice #8821 shows a charge of $1,240, which differs from the contract rate of $980/month.",
-    "identifiers": [
-      "8821"
-    ],
-    "urgency": "medium",
-    "route_to": "Escalation Queue",
-    "escalation_flag": true,
-    "summary": "The customer has identified a discrepancy on Invoice #8821. The invoice shows a charge of $1,240, but their contract rate is $980 per month. An investigation into this billing difference is requested.",
-    "processed_at": "2026-03-13T17:31:29.568267Z"
-  },
-  {
-    "source": "Web Form",
-    "subject": null,
-    "category": "Feature Request",
-    "priority": "Medium",
-    "confidence": 0.9,
-    "core_issue": "The user is requesting a bulk export feature for audit logs.",
-    "identifiers": [],
-    "urgency": "medium",
-    "route_to": "Product",
-    "escalation_flag": false,
-    "summary": "The user, from a compliance-heavy organization, requests a bulk export feature for audit logs. They state this feature would save them hours every month. This is a feature request to improve operational efficiency for audit and compliance processes.",
-    "processed_at": "2026-03-13T17:33:03.150671Z"
-  },
-  {
-    "source": "Email",
-    "subject": null,
-    "category": "Technical Question",
-    "priority": "Low",
-    "confidence": 0.95,
-    "core_issue": "The user is inquiring about the possibility of setting up Single Sign-On (SSO) with Okta.",
-    "identifiers": [],
-    "urgency": "low",
-    "route_to": "Support",
-    "escalation_flag": false,
-    "summary": "The user is asking about the feasibility of integrating Single Sign-On (SSO) with Okta. They are currently evaluating a potential switch in their authentication provider.",
-    "processed_at": "2026-03-13T17:33:27.606642Z"
-  },
-  {
-    "source": "Email",
-    "subject": null,
-    "category": "Incident/Outage",
-    "priority": "High",
-    "confidence": 0.9,
-    "core_issue": "The user is experiencing a 403 error when trying to log in to their account.",
-    "identifiers": [
-      "403",
-      "arcvault.io/user/jsmith"
-    ],
-    "urgency": "high",
-    "route_to": "IT/Security",
-    "escalation_flag": false,
-    "summary": "The user is unable to log into their account and consistently receives a 403 error. This problem began after a system update last Tuesday. Their account is identified as arcvault.io/user/jsmith.",
-    "processed_at": "2026-03-13T17:34:39.697693Z"
-  },
-  {
-    "source": "Email",
-    "subject": null,
-    "category": "Bug Report",
-    "priority": "High",
-    "confidence": 1.0,
-    "core_issue": "The user is experiencing a 403 error when attempting to log in to their account.",
-    "identifiers": [
-      "403",
-      "arcvault.io/user/jsmith"
-    ],
-    "urgency": "high",
-    "route_to": "Engineering",
-    "escalation_flag": false,
-    "summary": "The user reports receiving a 403 error when trying to log in to their account, arcvault.io/user/jsmith. This issue began after a system update last Tuesday. They are currently unable to access their account.",
-    "processed_at": "2026-03-13T17:37:32.844480Z"
-  },
-  {
-    "source": "Email",
-    "subject": null,
-    "category": "Bug Report",
-    "priority": "High",
-    "confidence": 1.0,
-    "core_issue": "The customer reports the following issue: Hi, I tried logging in this morning and keep getting a 403 error. My account is arcvault.io/user/jsmith. This started af...",
-    "identifiers": [
-      "arcvault.io/user/jsmith",
-      "403"
-    ],
-    "urgency": "medium",
-    "route_to": "Engineering",
-    "escalation_flag": false,
-    "summary": "The ticket describes a product issue related to Hi, I tried logging in this morning and keep getting a 403 error. It should be reviewed with medium urgency.",
-    "processed_at": "2026-03-13T17:40:40.602707Z"
-  },
-  {
-    "source": "Email",
-    "subject": null,
-    "category": "Bug Report",
-    "priority": "Medium",
-    "confidence": 0.82,
-    "core_issue": "The customer reports the following issue: Hi, I tried logging in this morning and keep getting a 403 error. My account is arcvault.io/user/jsmith. This started af...",
-    "identifiers": [
-      "arcvault.io/user/jsmith",
-      "403"
-    ],
-    "urgency": "medium",
-    "route_to": "Engineering",
-    "escalation_flag": false,
-    "summary": "The ticket describes a product issue related to Hi, I tried logging in this morning and keep getting a 403 error. It should be reviewed with medium urgency.",
-    "processed_at": "2026-03-13T17:42:05.971124Z"
-  },
-  {
-    "source": "Email",
-    "subject": null,
-    "category": "Bug Report",
-    "priority": "Medium",
-    "confidence": 0.82,
-    "core_issue": "The customer reports the following issue: Hi, I tried logging in this morning and keep getting a 403 error. My account is arcvault.io/user/jsmith. This started af...",
-    "identifiers": [
-      "arcvault.io/user/jsmith",
-      "403"
-    ],
-    "urgency": "medium",
-    "route_to": "Engineering",
-    "escalation_flag": false,
-    "summary": "The ticket describes a product issue related to Hi, I tried logging in this morning and keep getting a 403 error. It should be reviewed with medium urgency.",
-    "processed_at": "2026-03-13T17:42:15.942108Z"
-  },
-  {
-    "source": "Support Portal",
-    "subject": null,
-    "category": "Billing Issue",
-    "priority": "High",
-    "confidence": 0.98,
-    "core_issue": "The customer reports a billing problem involving invoice #8821 and a stated amount of $1240.",
-    "identifiers": [
-      "invoice #8821"
-    ],
-    "urgency": "high",
-    "route_to": "Escalation Queue",
-    "escalation_flag": true,
-    "summary": "This is a billing-related support request about invoice #8821 for $1240. It should be reviewed by the billing team with high urgency.",
-    "processed_at": "2026-03-13T17:45:59.120654Z"
-  },
-  {
-    "source": "Web Form",
-    "subject": null,
-    "category": "Feature Request",
-    "priority": "Low",
-    "confidence": 0.98,
-    "core_issue": "The customer is requesting a product enhancement related to we'd love to see a bulk export feature for our audit logs.",
-    "identifiers": [],
-    "urgency": "low",
-    "route_to": "Product",
-    "escalation_flag": false,
-    "summary": "This is a product improvement request rather than a defect or outage. It should be routed to the product queue for roadmap consideration.",
-    "processed_at": "2026-03-13T17:46:32.230826Z"
-  },
-  {
-    "source": "Web Form",
-    "subject": null,
-    "category": "Feature Request",
-    "priority": "Low",
-    "confidence": 0.98,
-    "core_issue": "The customer is requesting a product enhancement related to we'd love to see a bulk export feature for our audit logs.",
-    "identifiers": [],
-    "urgency": "low",
-    "route_to": "Product",
-    "escalation_flag": false,
-    "summary": "This is a product improvement request rather than a defect or outage. It should be routed to the product queue for roadmap consideration.",
-    "processed_at": "2026-03-13T17:48:58.836452Z"
-  },
-  {
-    "source": "Web Form",
-    "subject": null,
-    "category": "Feature Request",
-    "priority": "Low",
-    "confidence": 0.98,
-    "core_issue": "The customer is requesting a product enhancement related to we'd love to see a bulk export feature for our audit logs.",
-    "identifiers": [],
-    "urgency": "low",
-    "route_to": "Product",
-    "escalation_flag": false,
-    "summary": "This is a product improvement request rather than a defect or outage. It should be routed to the product queue for roadmap consideration.",
-    "processed_at": "2026-03-13T18:02:13.435410Z"
-  },
-  {
-    "source": "Support Portal",
-    "subject": null,
-    "category": "Billing Issue",
-    "priority": "High",
-    "confidence": 0.98,
-    "core_issue": "The customer reports a billing problem involving invoice #8821 and a stated amount of $1240.",
-    "identifiers": [
-      "invoice #8821"
-    ],
-    "urgency": "high",
-    "route_to": "Escalation Queue",
-    "escalation_flag": true,
-    "summary": "This is a billing-related support request about invoice #8821 for $1240. It should be reviewed by the billing team with high urgency.",
-    "processed_at": "2026-03-13T18:02:28.737128Z"
-  },
-  {
-    "source": "Support Portal",
-    "subject": null,
-    "category": "Billing Issue",
-    "priority": "High",
-    "confidence": 0.98,
-    "core_issue": "The customer reports a billing problem involving invoice #8821 and a stated amount of $1240.",
-    "identifiers": [
-      "invoice #8821"
-    ],
-    "urgency": "high",
-    "route_to": "Escalation Queue",
-    "escalation_flag": true,
-    "summary": "This is a billing-related support request about invoice #8821 for $1240. It should be reviewed by the billing team with high urgency.",
-    "processed_at": "2026-03-13T18:05:25.173073Z"
-  },
-  {
-    "source": "Web Form",
-    "subject": null,
-    "category": "Feature Request",
-    "priority": "Low",
-    "confidence": 0.98,
-    "core_issue": "The customer is requesting a product enhancement related to we'd love to see a bulk export feature for our audit logs.",
-    "identifiers": [],
-    "urgency": "low",
-    "route_to": "Product",
-    "escalation_flag": false,
-    "summary": "This is a product improvement request rather than a defect or outage. It should be routed to the product queue for roadmap consideration.",
-    "processed_at": "2026-03-13T18:05:37.736220Z"
+    "processed_at": "2026-03-14T13:11:42.326182Z"
   }
 ]

@@ -17,6 +17,13 @@ def append_triage_result(result: TriageResponse) -> None:
     output_path.write_text(json.dumps(records, indent=2), encoding="utf-8")
 
 
+def load_triage_results(*, limit: int | None = None) -> list[dict[str, Any]]:
+    records = _load_records(settings.output_file)
+    if limit is not None and limit >= 0:
+        records = records[-limit:]
+    return records
+
+
 def _load_records(output_path: Path) -> list[dict[str, Any]]:
     if not output_path.exists():
         return []

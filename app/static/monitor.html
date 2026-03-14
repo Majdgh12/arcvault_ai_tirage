@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ArcVault Triage Monitor</title>
+    <link rel="stylesheet" href="/static/monitor.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">ArcVault AI Triage</p>
+          <h1>Saved Triage Results Monitor</h1>
+          <p class="lede">
+            This page reads the persisted records from <code>outputs/triage_results.json</code>
+            through the FastAPI <code>/results</code> endpoint and shows them in a review-friendly table.
+          </p>
+        </div>
+
+        <div class="hero-controls">
+          <label class="limit-control">
+            <span>Rows</span>
+            <select id="limit-select">
+              <option value="10">10</option>
+              <option value="25" selected>25</option>
+              <option value="50">50</option>
+              <option value="100">100</option>
+            </select>
+          </label>
+          <button id="refresh-button" class="refresh-button" type="button">Refresh</button>
+        </div>
+      </section>
+
+      <section class="summary-strip" id="summary-strip">
+        <article class="summary-card">
+          <p class="summary-label">Records</p>
+          <p id="summary-count" class="summary-value">-</p>
+        </article>
+        <article class="summary-card">
+          <p class="summary-label">Escalated</p>
+          <p id="summary-escalated" class="summary-value">-</p>
+        </article>
+        <article class="summary-card">
+          <p class="summary-label">High Priority</p>
+          <p id="summary-high" class="summary-value">-</p>
+        </article>
+        <article class="summary-card">
+          <p class="summary-label">Last Updated</p>
+          <p id="summary-updated" class="summary-value">-</p>
+        </article>
+      </section>
+
+      <section class="table-panel">
+        <div class="panel-head">
+          <div>
+            <h2>Results Table</h2>
+            <p id="status-text">Loading saved triage records...</p>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Processed</th>
+                <th>Source</th>
+                <th>Category</th>
+                <th>Priority</th>
+                <th>Confidence</th>
+                <th>Urgency</th>
+                <th>Route</th>
+                <th>Escalation</th>
+                <th>Identifiers</th>
+                <th>Core Issue</th>
+                <th>Summary</th>
+              </tr>
+            </thead>
+            <tbody id="results-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="/static/monitor.js"></script>
+  </body>
+</html>

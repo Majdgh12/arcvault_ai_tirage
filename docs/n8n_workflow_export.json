@@ -1,0 +1,189 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "arcvault-inbound",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "958c23d8-db78-4ecc-a419-600ba63e7909",
+      "name": "Inbound Message",
+      "webhookId": "8baef482-1fcb-4312-872f-9972d0910260"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8000/triage",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "source",
+              "value": "={{$json.body.source}}"
+            },
+            {
+              "name": "subject",
+              "value": "={{$json.body.subject || null}}"
+            },
+            {
+              "name": "message",
+              "value": "={{$json.body.message}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        208,
+        0
+      ],
+      "id": "7e9c9a13-b44a-44f9-9d0c-e68d028e084f",
+      "name": "FastAPI Tirage"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "4aa0100a-f9d2-4722-be58-ea35e5456838",
+              "leftValue": "={{$json.route_to.toString().trim().toLowerCase()}}\n",
+              "rightValue": "escalation",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        416,
+        0
+      ],
+      "id": "1e771786-9d57-4c0b-a353-22746ae2863a",
+      "name": " Escalation Check"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "4e8af587-5bf9-4bf4-8628-5db5d40e2267",
+              "name": "queue",
+              "value": "Escalation Queue",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        624,
+        -96
+      ],
+      "id": "bfe3455f-f2bb-4778-befd-ab2332404350",
+      "name": " Escalation Queue"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ff21ae64-b635-4cf2-ae77-55db290f09a8",
+              "name": "queue",
+              "value": "Standard Queue",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        624,
+        96
+      ],
+      "id": "0d96df57-8e98-48fc-b2f7-25df7e10224b",
+      "name": "Standard Queue"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Inbound Message": {
+      "main": [
+        [
+          {
+            "node": "FastAPI Tirage",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "FastAPI Tirage": {
+      "main": [
+        [
+          {
+            "node": " Escalation Check",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    " Escalation Check": {
+      "main": [
+        [
+          {
+            "node": " Escalation Queue",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Standard Queue",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "3bba615d-d1ca-4499-9270-33c2ecd9e2e5",
+  "meta": {
+    "instanceId": "65c4af0d01f243d07fb0c9e0f28726e1eba167aec87872498e06219b6d7b9a89"
+  },
+  "id": "uWnw17VZqvZc8j5i",
+  "tags": []
+}
